@@ -42,28 +42,28 @@ public class Main {
         checkMobilePhone(1, 2003);
     }
 
-    public static void calculateDeliveryTime (int distance) {
+    public static int calculateDeliveryTime (int distance) {
 
         int deliveryDays = 0;
         if (distance <= 20) {
             deliveryDays++;
-            System.out.println("Потребуется дней: " + deliveryDays);
         } else if (distance <= 60) {
             deliveryDays+=2;
-            System.out.println("Потребуется дней: " + deliveryDays);
         } else if (distance <= 100) {
             deliveryDays+=3;
-            System.out.println("Потребуется дней: " + deliveryDays);
-        } else {
-            System.out.println("Свыше 100 км доставка не осуществляется");
         }
+        return deliveryDays;
 
     }
 
     public static void task3 () {
-        calculateDeliveryTime(95);
+        int distance = 95;
+        int deliveryDays = calculateDeliveryTime(distance);
+        if (deliveryDays != 0) {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else {
+            System.out.println("Свыше 100 км доставка не осуществляется");
+        }
     }
-
-
 
 }
